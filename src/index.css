@@ -24,9 +24,10 @@ body {
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 650px;
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .hero-card:hover {
@@ -44,7 +45,7 @@ body {
   border: 4px solid transparent;
   background: linear-gradient(#111, #111) padding-box,
               linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .profile-pic:hover {
@@ -57,6 +58,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .glass-btn {
@@ -66,7 +68,7 @@ body {
   font-weight: 500;
   color: white;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .glass-btn:hover {
@@ -82,13 +84,23 @@ body {
   text-align: center;
 }
 
+/* ✅ FIXED SECTION TITLE */
 .section-title {
   font-size: 38px;
   margin-bottom: 70px;
   font-weight: 600;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+
+  /* fallback safe */
+}
+
+/* OPTIONAL: gradient effect only for supported browsers */
+@supports (-webkit-background-clip: text) {
+  .section-title {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 /* GRID */
@@ -106,8 +118,9 @@ body {
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -163,7 +176,7 @@ body {
   font-weight: 500;
   color: white;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .project-btn:hover {
